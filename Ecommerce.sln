@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Services\Cat
 		{CC763C75-604D-4CF8-B1F3-75685EA3BD54} = {CC763C75-604D-4CF8-B1F3-75685EA3BD54}
 	EndProjectSection
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F05A3560-143D-4F47-8A5F-0150C7C902BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{264C495B-C09E-40FD-86AB-1DCA6BDE6138}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{264C495B-C09E-40FD-86AB-1DCA6BDE6138}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{264C495B-C09E-40FD-86AB-1DCA6BDE6138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05A3560-143D-4F47-8A5F-0150C7C902BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05A3560-143D-4F47-8A5F-0150C7C902BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05A3560-143D-4F47-8A5F-0150C7C902BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05A3560-143D-4F47-8A5F-0150C7C902BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

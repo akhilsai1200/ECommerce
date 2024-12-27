@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.Infrastructure.Data
 {
-    public class CatalogContext
+    public class CatalogContext : ICatalogContext
     {
         public IMongoCollection<Product> Products { get;}
         public IMongoCollection<ProductBrand> Brands { get;}
@@ -18,9 +18,9 @@ namespace Catalog.Infrastructure.Data
         {
             var client = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
             var dataBase = client.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
-            var Brands = dataBase.GetCollection<ProductBrand>(configuration.GetValue<string>("DatabaseSettings:BrandsCollection"));
-            var Types = dataBase.GetCollection<ProductType>(configuration.GetValue<string>("DatabaseSettings:TypesCollection"));
-            var Products = dataBase.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings:CollectionName"));
+            Brands = dataBase.GetCollection<ProductBrand>(configuration.GetValue<string>("DatabaseSettings:BrandsCollection"));
+            Types = dataBase.GetCollection<ProductType>(configuration.GetValue<string>("DatabaseSettings:TypesCollection"));
+            Products = dataBase.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings:CollectionName"));
             BrandContextSeed.SeedData(Brands);
             TypeContextSeed.SeedData(Types);
             CatalogContextSeed.SeedData(Products);
