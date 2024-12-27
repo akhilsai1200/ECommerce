@@ -10,7 +10,7 @@ namespace Catalog.Infrastructure.Repositories
         public ICatalogContext _context { get;}
         public ProductRepository(ICatalogContext context)
         {
-            _context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context), "Catalog context cannot be null.");
         }
         async Task<Product> IProductRepository.GetProduct(string id)
         {
@@ -19,6 +19,9 @@ namespace Catalog.Infrastructure.Repositories
 
         async Task<IEnumerable<Product>> IProductRepository.GetProducts()
         {
+            if (_context.Products == null)
+                throw new InvalidOperationException("Products collection is not initialized.");
+
             return await _context.Products.Find(p=>true).ToListAsync();
         }
 
