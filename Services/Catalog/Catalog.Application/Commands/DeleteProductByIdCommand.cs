@@ -9,5 +9,4 @@ namespace Catalog.Application.Commands
         {
             Id = id;
         }
-    }
 }
